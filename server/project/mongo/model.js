@@ -13,15 +13,18 @@ const schema = new mongoose.Schema({
 		default: Date.now,
 	},
 	name: {
-		required: true,
 		type: String,
+		required: true,
 	},
 	type: {
 		type: String,
 		enum: ['FILE', 'FOLDER'],
 		default: 'FOLDER'
 	},
-	size:        Number,
+	size: {
+		type: Number,
+		default: 0,
+	},
 	awsLocation: String,
 	awsKey:      String,
 	parentId:    ObjectId,
