@@ -11,10 +11,6 @@ const schema = new mongoose.Schema({
 		required: true,
 		type: String,
 	},
-	isRoot: {
-		type: Boolean,
-		default: false,
-	},
 	size: Number,
 	awsLocation: String,
 	parentId: mongoose.Schema.Types.ObjectId,
