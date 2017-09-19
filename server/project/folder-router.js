@@ -2,6 +2,7 @@
 
 const router = require('express').Router()  // eslint-disable-line new-cap
 
-router.post('/', require('./handler/create'))
+router.post('/', require('./handler/create-folder'))
+router.get('/:id/items', require('./handler/find-files'))
 
 module.exports = router
