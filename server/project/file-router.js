@@ -23,5 +23,6 @@ router.post(
 )
 
 router.get('/', require('./handler/find-files'))
+router.get('/:id/content', require('./handler/load-file.js'))
 
 module.exports = router

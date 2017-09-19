@@ -29,7 +29,9 @@ module.exports = (req, res, next) => {
 		name:        file.originalname,
 		size:        file.size,
 		awsLocation: file.location,
+		awsKey:      file.key,
 		parentId:    query.parentId || query.projectId,
+		projectId:   query.projectId,
 	})
 	.then(fileDoc => res.json(fileDoc))
 	.catch(next)
