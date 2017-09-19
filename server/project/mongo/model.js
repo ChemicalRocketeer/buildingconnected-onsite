@@ -11,6 +11,15 @@ const schema = new mongoose.Schema({
 		required: true,
 		type: String,
 	},
+	size:        {
+		required: true,
+		type: Number,
+	},
+	awsLocation: {
+		required: true,
+		type: String,
+	},
+	parentId: mongoose.Schema.Types.ObjectId,
 })
 
 module.exports = mongoose.model('Project', schema)
