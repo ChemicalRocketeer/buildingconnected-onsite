@@ -5,6 +5,7 @@
     "start": "nodemon --ignore client/ ./server"
   },
   "dependencies": {
+    "archiver": "^2.0.3",
     "aws-sdk": "^2.7.21",
     "babel-core": "^6.21.0",
     "babel-loader": "^6.2.10",

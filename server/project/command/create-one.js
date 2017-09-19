@@ -7,8 +7,8 @@ module.exports = data => {
 	return model
 		.create(data)
 		.call('toObject')
-		.then(file => {
-			return changeFolderSizes(file, file.size)
-				.then(() => file) // this command returns the file document
-		})
+		.then(file =>
+			changeFolderSizes(file, file.size)
+			.then(() => file) // returns the file document
+		)
 }
