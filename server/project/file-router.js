@@ -19,9 +19,9 @@ const uploader = multer({
 router.post(
 	'/', 
 	uploader.single('file'), 
-	require('../project/handler/upload-file')
+	require('./handler/upload-file')
 )
 
-router.get('/', require('../project/handler/find-files'))
+router.get('/', require('./handler/find-files'))
 
 module.exports = router
