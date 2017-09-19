@@ -1,10 +1,10 @@
 'use strict'
 
-const createOne = require('../command/create-one')
+const init = require('../command/init')
 const findById = require('../query/find-by-id')
 
 module.exports = (req, res, next) => {
-	createOne(req.body)
+	init(req.body)
 		.then(createdProject => findById(createdProject._id))
 		.then(project => res.json(project))
 		.catch(next)

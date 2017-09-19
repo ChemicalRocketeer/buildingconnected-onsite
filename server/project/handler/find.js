@@ -3,7 +3,7 @@
 const find = require('../query/find')
 
 module.exports = (req, res, next) => {
-	find()
+	find({ isRoot: true })
 		.then(projects => res.json(projects))
 		.catch(next)
 }

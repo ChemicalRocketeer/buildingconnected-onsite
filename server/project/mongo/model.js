@@ -11,15 +11,16 @@ const schema = new mongoose.Schema({
 		required: true,
 		type: String,
 	},
-	size:        {
-		required: true,
-		type: Number,
+	isRoot: {
+		type: Boolean,
+		default: false,
 	},
-	awsLocation: {
-		required: true,
-		type: String,
-	},
+	size: Number,
+	awsLocation: String,
 	parentId: mongoose.Schema.Types.ObjectId,
 })
+
+// for quickly finding project roots
+schema.index({ isRoot: 1 })
 
 module.exports = mongoose.model('Project', schema)

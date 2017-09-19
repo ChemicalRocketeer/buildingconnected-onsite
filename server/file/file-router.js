@@ -4,7 +4,7 @@ const router = require('express').Router()  // eslint-disable-line new-cap
 const multer = require('multer')
 const multerS3 = require('multer-s3')
 const s3 = require('../lib/s3')
-const create = require('../project/query/create')
+const create = require('../project/command/create-one')
 
 const uploader = multer({
 	storage: multerS3({
@@ -46,7 +46,7 @@ router.post('/', uploader.single('file'), (req, res, next) => {
 		awsLocation: file.location,
 		parentId:    req.params.parentId
 	})
-	.then(file => res.json(file))
+	.then(fileDoc => res.json(fileDoc))
 	.catch(next)
 })
 
