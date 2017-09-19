@@ -2,6 +2,8 @@
 
 const model = require('../mongo/model')
 
+// updates all the parent folders of the given file/folder.
+// diff is the amount to add/subtract from the folder sizes
 const changeFolderSizes = (file, diff) => {
     if (!file || !file.parentId) return;
 	return model

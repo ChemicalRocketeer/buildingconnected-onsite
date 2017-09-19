@@ -30,6 +30,8 @@ const schema = new mongoose.Schema({
 	parentId:    ObjectId,
 })
 
+// documents are often looked up by the parentId
+// to get contents of folders and to get root documents
 schema.index({ parentId: 1 })
 
 module.exports = mongoose.model('Project', schema)
