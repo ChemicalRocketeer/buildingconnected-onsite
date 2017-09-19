@@ -25,6 +25,7 @@ module.exports = (req, res, next) => {
 	const file = req.file
 	const query = req.query
 	return create({
+		type:        'FILE',
 		name:        file.originalname,
 		size:        file.size,
 		awsLocation: file.location,

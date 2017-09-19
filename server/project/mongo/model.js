@@ -11,6 +11,11 @@ const schema = new mongoose.Schema({
 		required: true,
 		type: String,
 	},
+	type: {
+		type: String,
+		enum: ['FILE', 'FOLDER'],
+		default: 'FOLDER'
+	},
 	size: Number,
 	awsLocation: String,
 	parentId: mongoose.Schema.Types.ObjectId,
